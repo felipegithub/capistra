@@ -9,7 +9,7 @@ set :deploy_to, "/home/#{user}/apps/#{application}" #Local no servidor onde vai 
 set :use_sudo, false # Não executar os Comandos com 'sudo' no inicio
 
 set :scm, "git" # Tipo: git, bitcucket...
-set :repository, "git@github.com:felipegithub/capistrano.git" #URL do repositorio
+set :repository, "git@github.com:felipegithub/capistra.git" #URL do repositorio
 set :branch, "master"
 
 set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
