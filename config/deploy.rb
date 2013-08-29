@@ -38,7 +38,7 @@ namespace :deploy do
 	end
 
 	after "deploy:setup", "deploy:setup_inicial_nginx"
-	after "deploy:setup", "deploy:setup_db"
+	after "deploy", "deploy:setup_db"
 	
 
 end
