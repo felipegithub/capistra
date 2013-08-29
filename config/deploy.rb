@@ -34,9 +34,7 @@ namespace :deploy do
 	end
 	
 	task :setup_db, roles: :app do
-		run "mkdir -p #{shared_path}/config"
-		put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
-		puts "Passou o banco para a pasta shared"
+		run "cd #{current_path}; rake db:create:all RAILS_ENV=#{rails_env}"
 	end
 
 	after "deploy:setup", "deploy:setup_inicial_nginx"
