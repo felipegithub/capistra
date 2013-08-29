@@ -33,7 +33,13 @@ namespace :deploy do
 		puts "Criou o Link do arquivo de configuração do ngingx"
 	end
 	
+	task :setup_db, roles: :app do
+		put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
+		puts "Passou o banco para a pasta shared"
+	end
+
 	after "deploy:setup", "deploy:setup_inicial_nginx"
+	after "deploy:setup", "deploy:setup_db"
 	
 
 end
