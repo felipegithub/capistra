@@ -34,6 +34,7 @@ namespace :deploy do
 	end
 	
 	task :setup_db, roles: :app do
+		run "mkdir -p #{shared_path}/config"
 		put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
 		puts "Passou o banco para a pasta shared"
 	end
