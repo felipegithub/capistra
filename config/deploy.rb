@@ -15,6 +15,8 @@ set :branch, "master"
 set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
 set :rvm_autolibs_flag, "read-only"  
 
+set :rails_env, "production"
+
 #Parametros de conexão via ssh:
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
